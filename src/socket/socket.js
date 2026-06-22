@@ -30,7 +30,7 @@ function getPresence(tripId) {
 export const initSocket = (httpServer) => {
   const io = new Server(httpServer, {
     cors: {
-      origin: process.env.CLIENT_URL,   // ← reads from Railway env var
+      origin: process.env.CLIENT_URL || "http://localhost:5173", // ← reads from Railway env var
       methods: ['GET', 'POST'],
       credentials: true,
     },

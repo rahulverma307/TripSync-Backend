@@ -14,7 +14,6 @@ import uploadRoutes from "./routes/upload.routes.js";
 import aiRoutes from "./routes/ai.routes.js";
 import chatRoutes from "./routes/chat.routes.js";
 import healthRouter from "./HealthCheck.routes.js";
-
 const app = express();
 
 app.get("/api/health", (req, res) => {
@@ -29,7 +28,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "https://trip-sync-sigma.vercel.app",
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
     credentials: true,
   }),
 );
